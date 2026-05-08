@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "skills": {
+    "byted-data-search": {
+      "source": "skills.volces.com",
+      "sourceType": "well-known",
+      "computedHash": "e0b10eb63978a39ee546aa42b862e8f1ac8852187d95715e69f7ce6febbcf3b5"
+    },
+    "byted-web-search": {
+      "source": "skills.volces.com",
+      "sourceType": "well-known",
+      "computedHash": "135faafc4b7622bdeaa2bf98cbe5c7f1ac88c2592d22ffb960f55211529df13e"
+    },
+    "fix-linking": {
+      "source": "calm-north/seojuice-skills",
+      "sourceType": "github",
+      "computedHash": "88cb630e2d8394a2be552156c92e7e4ee5b11649fae5bb6551111070c9dace3b"
+    },
+    "image-generate": {
+      "source": "skills.volces.com",
+      "sourceType": "well-known",
+      "computedHash": "c4a16d34100532e0d428980f58b9762f100cd48a55e8f7645256b772aae8300c"
+    },
+    "link-reader": {
+      "source": "skills.volces.com",
+      "sourceType": "well-known",
+      "computedHash": "ae048a43849d8d06141ee2dd43cc400b7d763092476cb8ec9be73cbefe3878bf"
+    },
+    "linkedin-posts": {
+      "source": "kostja94/marketing-skills",
+      "sourceType": "github",
+      "computedHash": "20bb665c6db1c45e75f022c9b468569384a0e5bc68d3956d5782591792d55326"
+    },
+    "tos-file-access": {
+      "source": "skills.volces.com",
+      "sourceType": "well-known",
+      "computedHash": "04133f1d7dc31a3577a629684853131f3052ed17cf794cdc7a8adccc533f9af3"
+    },
+    "veadk-go-skills": {
+      "source": "skills.volces.com",
+      "sourceType": "well-known",
+      "computedHash": "b7dad46761e70f8a08cfa121337aa01210efc44d4d572405025285bf585dbe72"
+    },
+    "voice-to-text": {
+      "source": "skills.volces.com",
+      "sourceType": "well-known",
+      "computedHash": "d9d785c3727d6bca0479ab0269278c8814e98094f79876ad2deb820333bcbe1a"
+    },
+    "web-search": {
+      "source": "skills.volces.com",
+      "sourceType": "well-known",
+      "computedHash": "ee096973c15d6f37dd5b25c50ad529f4b5c75f33f5054a039595cd866857fcd0"
+    }
+  }
+}

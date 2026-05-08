@@ -1,0 +1,344 @@
+{
+  "meta": {
+    "version": 2,
+    "lastReviewed": "2026-04-25",
+    "notes": "Each url points to a public product or app entry. Optional logoHost overrides the hostname used for the small favicon logo when the link lives on a subdomain (e.g. a pricing path) or you want a clearer mark."
+  },
+  "categories": [
+    { "id": "chat", "label": "Chat & assistants" },
+    { "id": "code", "label": "Code & development" },
+    { "id": "search", "label": "Research & search" },
+    { "id": "image", "label": "Image & design" },
+    { "id": "writing", "label": "Writing & notes" },
+    { "id": "project", "label": "Project & planning" },
+    { "id": "video", "label": "Video & motion" },
+    { "id": "audio", "label": "Music & audio" },
+    { "id": "hardware", "label": "Electronics & making" },
+    { "id": "other", "label": "Productivity" }
+  ],
+  "tools": [
+    {
+      "id": "chatgpt",
+      "name": "ChatGPT",
+      "vendor": "OpenAI",
+      "category": "chat",
+      "summary": "Conversational model for explanation, drafting, and coding help with a dedicated chat experience.",
+      "url": "https://chatgpt.com"
+    },
+    {
+      "id": "claude",
+      "name": "Claude",
+      "vendor": "Anthropic",
+      "category": "chat",
+      "summary": "Assistant for long context, analysis, and careful reasoning through the web app.",
+      "url": "https://claude.ai"
+    },
+    {
+      "id": "gemini",
+      "name": "Gemini",
+      "vendor": "Google",
+      "category": "chat",
+      "summary": "Google’s multimodal assistant, integrated with Google account workflows.",
+      "url": "https://gemini.google.com"
+    },
+    {
+      "id": "copilot-web",
+      "name": "Microsoft Copilot",
+      "vendor": "Microsoft",
+      "category": "chat",
+      "summary": "Web copilot for search, summaries, and image generation in the Edge ecosystem.",
+      "url": "https://copilot.microsoft.com"
+    },
+    {
+      "id": "perplexity",
+      "name": "Perplexity",
+      "vendor": "Perplexity",
+      "category": "search",
+      "summary": "Answer engine that cites web sources and threads follow-up questions.",
+      "url": "https://www.perplexity.ai"
+    },
+    {
+      "id": "google-ai-studio",
+      "name": "Google AI Studio",
+      "vendor": "Google",
+      "category": "code",
+      "summary": "Build and test prompts and models in Google’s API-oriented workspace.",
+      "url": "https://aistudio.google.com"
+    },
+    {
+      "id": "github-copilot",
+      "name": "GitHub Copilot",
+      "vendor": "GitHub",
+      "category": "code",
+      "summary": "In-editor and CLI suggestions trained for software workflows inside GitHub.",
+      "url": "https://github.com/features/copilot",
+      "logoHost": "github.com"
+    },
+    {
+      "id": "cursor",
+      "name": "Cursor",
+      "vendor": "Anysphere",
+      "category": "code",
+      "summary": "AI-native editor built on familiar IDE patterns with model choice and project context.",
+      "url": "https://cursor.com"
+    },
+    {
+      "id": "replit-ai",
+      "name": "Replit AI",
+      "vendor": "Replit",
+      "category": "code",
+      "summary": "Cloud IDE with built-in assist for build, run, and deploy in one place.",
+      "url": "https://replit.com/ai"
+    },
+    {
+      "id": "adobe-firefly",
+      "name": "Adobe Firefly",
+      "vendor": "Adobe",
+      "category": "image",
+      "summary": "Generative models for image and text effects in Adobe’s commercial-safe workflow.",
+      "url": "https://firefly.adobe.com",
+      "logoHost": "adobe.com"
+    },
+    {
+      "id": "canva-ai",
+      "name": "Canva AI",
+      "vendor": "Canva",
+      "category": "image",
+      "summary": "Generative and editing features inside the Canva design product.",
+      "url": "https://www.canva.com/ai"
+    },
+    {
+      "id": "figma-ai",
+      "name": "Figma AI",
+      "vendor": "Figma",
+      "category": "image",
+      "summary": "Design assistance and automation inside the Figma editor.",
+      "url": "https://www.figma.com/ai"
+    },
+    {
+      "id": "notion-ai",
+      "name": "Notion AI",
+      "vendor": "Notion",
+      "category": "writing",
+      "summary": "In-workspace writing, Q&A, and autofill for notes and team wikis.",
+      "url": "https://www.notion.so/product/ai"
+    },
+    {
+      "id": "gamma",
+      "name": "Gamma",
+      "vendor": "Gamma",
+      "category": "writing",
+      "summary": "Generates presentable documents and slide decks from prompts.",
+      "url": "https://gamma.app"
+    },
+    {
+      "id": "otter",
+      "name": "Otter.ai",
+      "vendor": "Otter.ai",
+      "category": "other",
+      "summary": "Meeting transcription, summaries, and search across conversations.",
+      "url": "https://otter.ai"
+    },
+    {
+      "id": "motion",
+      "name": "Motion",
+      "vendor": "Motion",
+      "category": "project",
+      "summary": "AI planning that builds schedules, tasks, and calendaring from your priorities and deadlines.",
+      "url": "https://www.usemotion.com"
+    },
+    {
+      "id": "reclaim",
+      "name": "Reclaim",
+      "vendor": "Reclaim.ai",
+      "category": "project",
+      "summary": "Defends your calendar, auto-schedules focus and meetings, and syncs to common work apps.",
+      "url": "https://reclaim.ai"
+    },
+    {
+      "id": "linear",
+      "name": "Linear",
+      "vendor": "Linear",
+      "category": "project",
+      "summary": "Issue tracking and roadmaps with strong defaults and in-product assist for product teams.",
+      "url": "https://linear.app"
+    },
+    {
+      "id": "clickup",
+      "name": "ClickUp",
+      "vendor": "ClickUp",
+      "category": "project",
+      "summary": "Tasks, docs, goals, and time in one workspace, with a dedicated AI feature set for drafting and Q&A.",
+      "url": "https://clickup.com/features/ai"
+    },
+    {
+      "id": "asana",
+      "name": "Asana (AI features)",
+      "vendor": "Asana",
+      "category": "project",
+      "summary": "Work management with in-product help for status, field suggestions, and clarity on projects.",
+      "url": "https://asana.com/ai"
+    },
+    {
+      "id": "monday",
+      "name": "monday.com",
+      "vendor": "monday.com",
+      "category": "project",
+      "summary": "Boards and products for work with AI to generate views, text, and summaries in context.",
+      "url": "https://monday.com/ai"
+    },
+    {
+      "id": "notion",
+      "name": "Notion (workspace)",
+      "vendor": "Notion",
+      "category": "project",
+      "summary": "Databases, wikis, and roadmaps; pair with Notion AI for project docs and team spaces.",
+      "url": "https://www.notion.so/product"
+    },
+    {
+      "id": "runway",
+      "name": "Runway",
+      "vendor": "Runway",
+      "category": "video",
+      "summary": "Generative video, images, and motion inside a browser-based creative suite for teams and solo work.",
+      "url": "https://runwayml.com"
+    },
+    {
+      "id": "pika",
+      "name": "Pika",
+      "vendor": "Pika Labs",
+      "category": "video",
+      "summary": "Text-to-video and style-driven clips from prompts with a focused creation flow.",
+      "url": "https://pika.art"
+    },
+    {
+      "id": "descript",
+      "name": "Descript",
+      "vendor": "Descript",
+      "category": "video",
+      "summary": "Edit by transcript, multitrack audio, screen capture, and overdub in one timeline.",
+      "url": "https://www.descript.com"
+    },
+    {
+      "id": "capcut",
+      "name": "CapCut (with AI tools)",
+      "vendor": "ByteDance / CapCut",
+      "category": "video",
+      "summary": "Edit on web or device with generative and assistive tools for short-form and story videos.",
+      "url": "https://www.capcut.com"
+    },
+    {
+      "id": "invideo",
+      "name": "InVideo AI",
+      "vendor": "InVideo",
+      "category": "video",
+      "summary": "Script, scene, and voice from prompts; aimed at quick marketing and explainer output.",
+      "url": "https://invideo.io/ai"
+    },
+    {
+      "id": "synthesia",
+      "name": "Synthesia",
+      "vendor": "Synthesia",
+      "category": "video",
+      "summary": "Create presenter-led videos with avatars and many languages, common for L&D and internal comms.",
+      "url": "https://www.synthesia.io"
+    },
+    {
+      "id": "suno",
+      "name": "Suno",
+      "vendor": "Suno",
+      "category": "audio",
+      "summary": "Generate full songs and stems from text prompts, shareable in the public feed.",
+      "url": "https://suno.com"
+    },
+    {
+      "id": "udio",
+      "name": "Udio",
+      "vendor": "Udio",
+      "category": "audio",
+      "summary": "Text-to-music and vocal experiments with a browser studio and community focus.",
+      "url": "https://www.udio.com"
+    },
+    {
+      "id": "adobe-podcast-enhance",
+      "name": "Adobe speech enhancement (Podcast)",
+      "vendor": "Adobe",
+      "category": "audio",
+      "summary": "Clean and enhance dialogue recordings; useful for podcasts, interviews, and voice-overs before edit.",
+      "url": "https://podcast.adobe.com/enhance",
+      "logoHost": "adobe.com"
+    },
+    {
+      "id": "landr",
+      "name": "LANDR",
+      "vendor": "LANDR",
+      "category": "audio",
+      "summary": "Mastering, distribution, and creative assist aimed at bedroom producers and small teams.",
+      "url": "https://www.landr.com"
+    },
+    {
+      "id": "arduino",
+      "name": "Arduino (IDE & ecosystem)",
+      "vendor": "Arduino",
+      "category": "hardware",
+      "summary": "Official platform for Uno, Nano, and compatibles: IDE, board docs, and libraries to program microcontrollers.",
+      "url": "https://www.arduino.cc"
+    },
+    {
+      "id": "tinkercad",
+      "name": "Tinkercad",
+      "vendor": "Autodesk",
+      "category": "hardware",
+      "summary": "Browser 3D design, code blocks, and basic circuits; common first step for beginners and classes.",
+      "url": "https://www.tinkercad.com"
+    },
+    {
+      "id": "wokwi",
+      "name": "Wokwi",
+      "vendor": "Wokwi",
+      "category": "hardware",
+      "summary": "Simulate Arduino, ESP32, and parts in the browser; fast iteration before you flash hardware.",
+      "url": "https://wokwi.com"
+    },
+    {
+      "id": "flux-pcb",
+      "name": "Flux (PCB with AI assist)",
+      "vendor": "Flux",
+      "category": "hardware",
+      "summary": "Collaborative PCB and schematic in the browser, with in-product help for part choices and layout.",
+      "url": "https://www.flux.ai"
+    },
+    {
+      "id": "snapeda",
+      "name": "SnapEDA",
+      "vendor": "SnapEDA",
+      "category": "hardware",
+      "summary": "Search symbols, footprints, and 3D models, then move into KiCad and other ECAD tools.",
+      "url": "https://www.snapeda.com"
+    },
+    {
+      "id": "fritzing",
+      "name": "Fritzing",
+      "vendor": "Fritzing",
+      "category": "hardware",
+      "summary": "Breadboard, schematic, and board view for teaching and small Arduino projects (desktop app).",
+      "url": "https://fritzing.org"
+    },
+    {
+      "id": "kicad",
+      "name": "KiCad",
+      "vendor": "KiCad",
+      "category": "hardware",
+      "summary": "Open source PCB suite: schematic, layout, 3D viewer, and manufacturing outputs without license fees.",
+      "url": "https://www.kicad.org"
+    },
+    {
+      "id": "easyeda",
+      "name": "EasyEDA (incl. LCSC)",
+      "vendor": "EasyEDA / JLCPCB",
+      "category": "hardware",
+      "summary": "In-browser EDA, parts, and a path to cheap prototypes with common Asian fabs.",
+      "url": "https://easyeda.com"
+    }
+  ]
+}

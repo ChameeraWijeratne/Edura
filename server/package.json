@@ -1,0 +1,22 @@
+{
+  "name": "edura-server",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "node index.js",
+    "dev:watch": "node --watch index.js",
+    "start": "node index.js",
+    "build:catalog:intl": "node scripts/build-international-coursera.mjs --limit 1000",
+    "build:catalog:tape": "node scripts/build-tape-institutions.mjs",
+    "build:catalog:sl": "node scripts/build-sri-lanka-catalog.mjs",
+    "seed:internships": "node scripts/seed-internships.mjs"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.4.2",
+    "express": "^4.21.2",
+    "express-rate-limit": "^8.5.1",
+    "helmet": "^8.1.0",
+    "nodemailer": "^8.0.7"
+  }
+}

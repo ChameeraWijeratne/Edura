@@ -1,0 +1,18 @@
+Slider images — Unsplash License (https://unsplash.com/license)
+
+Files in this folder are served at /slider/ (Vite copies public/ to the site root).
+If a file is missing, the app loads the same photo from images.unsplash.com (see
+HERO_SLIDER_REMOTE_FALLBACK in src/hero/heroHomeSlides.js).
+
+edu-library-reading.jpg
+  https://unsplash.com/photos/1524995997946-a1c2e315a42f
+
+edu-campus-university.jpg
+  https://unsplash.com/photos/1516321318423-f06f85e504b3
+
+edu-classroom-students.jpg
+  https://unsplash.com/photos/1523240795612-9a054b0db644
+
+edu-woman-student-study.jpg
+  https://unsplash.com/photos/1521572267360-ee0c2909d518
+  (Woman at laptop — suitable for education / study context; Unsplash License)

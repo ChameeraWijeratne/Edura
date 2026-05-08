@@ -1,0 +1,518 @@
+[
+  {
+    "domain": "goldmansachs.com",
+    "name": "Goldman Sachs"
+  },
+  {
+    "domain": "ecp.fr",
+    "name": "CentraleSupélec"
+  },
+  {
+    "domain": "ntu.edu.tw",
+    "name": "National Taiwan University"
+  },
+  {
+    "domain": "immersifyeducation.com",
+    "name": "Immersify"
+  },
+  {
+    "domain": "pku.edu.cn",
+    "name": "Peking University"
+  },
+  {
+    "domain": "vr.google.com",
+    "name": "Google AR & VR"
+  },
+  {
+    "domain": "ualberta.ca",
+    "name": "University of Alberta"
+  },
+  {
+    "domain": "educba.com",
+    "name": "EDUCBA"
+  },
+  {
+    "domain": "imperial.ac.uk",
+    "name": "Imperial College London"
+  },
+  {
+    "domain": "umich.edu",
+    "name": "University of Michigan"
+  },
+  {
+    "domain": "london.ac.uk",
+    "name": "University of London"
+  },
+  {
+    "domain": "msu.edu",
+    "name": "Michigan State University"
+  },
+  {
+    "domain": "illinois.edu",
+    "name": "University of Illinois Urbana-Champaign"
+  },
+  {
+    "domain": "asu.edu",
+    "name": "Arizona State University"
+  },
+  {
+    "domain": "columbia.edu",
+    "name": "Columbia University"
+  },
+  {
+    "domain": "imt.fr",
+    "name": "Institut Mines-Télécom"
+  },
+  {
+    "domain": "learnquest.com",
+    "name": "LearnQuest"
+  },
+  {
+    "domain": "academy.qualcomm.com",
+    "name": "Qualcomm Academy"
+  },
+  {
+    "domain": "duke.edu",
+    "name": "Duke University"
+  },
+  {
+    "domain": "colorado.edu",
+    "name": "University of Colorado Boulder"
+  },
+  {
+    "domain": "acefitness.org",
+    "name": "American Council on Exercise"
+  },
+  {
+    "domain": "kennesaw.edu",
+    "name": "Kennesaw State University"
+  },
+  {
+    "domain": "fia.com.br",
+    "name": "Fundação Instituto de Administração"
+  },
+  {
+    "domain": "jhu.edu",
+    "name": "Johns Hopkins University"
+  },
+  {
+    "domain": "barbaraoakley.com",
+    "name": "Deep Teaching Solutions"
+  },
+  {
+    "domain": "umd.edu",
+    "name": "University of Maryland, College Park"
+  },
+  {
+    "domain": "eur.nl",
+    "name": "Erasmus University Rotterdam"
+  },
+  {
+    "domain": "boardinfinity.com",
+    "name": "Board Infinity "
+  },
+  {
+    "domain": "vanderbilt.edu",
+    "name": "Vanderbilt University"
+  },
+  {
+    "domain": "bbva.com",
+    "name": "Campus BBVA"
+  },
+  {
+    "domain": "uchile.cl",
+    "name": "Universidad de Chile"
+  },
+  {
+    "domain": "online.berklee.edu",
+    "name": "Berklee"
+  },
+  {
+    "domain": "utoronto.ca",
+    "name": "University of Toronto"
+  },
+  {
+    "domain": "leiden.edu",
+    "name": "Universiteit Leiden"
+  },
+  {
+    "domain": "ce.uci.edu",
+    "name": "University of California, Irvine"
+  },
+  {
+    "domain": "rice.edu",
+    "name": "Rice University"
+  },
+  {
+    "domain": "sydney.edu.au",
+    "name": "The University of Sydney"
+  },
+  {
+    "domain": "ku.dk",
+    "name": "University of Copenhagen"
+  },
+  {
+    "domain": "grow.google",
+    "name": "Google"
+  },
+  {
+    "domain": "isc2.org",
+    "name": "ISC2"
+  },
+  {
+    "domain": "uab.es",
+    "name": "Universitat Autònoma de Barcelona"
+  },
+  {
+    "domain": "wvu.edu",
+    "name": "West Virginia University"
+  },
+  {
+    "domain": "unil.ch",
+    "name": "University of Lausanne"
+  },
+  {
+    "domain": "ubits.com",
+    "name": "UBITS"
+  },
+  {
+    "domain": "intuit.com",
+    "name": "Intuit"
+  },
+  {
+    "domain": "cetli.upenn.edu",
+    "name": "University of Pennsylvania"
+  },
+  {
+    "domain": "tallyeducation.com",
+    "name": "Tally Education and Distribution Services Private Limited"
+  },
+  {
+    "domain": "alfaisal.edu",
+    "name": "Alfaisal University | KLD"
+  },
+  {
+    "domain": "advancingwomenintech.org",
+    "name": "Advancing Women in Tech"
+  },
+  {
+    "domain": "polytechnique.edu",
+    "name": "École Polytechnique"
+  },
+  {
+    "domain": "morehouse.edu",
+    "name": "Morehouse College"
+  },
+  {
+    "domain": "umn.edu",
+    "name": "University of Minnesota"
+  },
+  {
+    "domain": "ub.edu",
+    "name": "Universitat de Barcelona"
+  },
+  {
+    "domain": "unam.mx",
+    "name": "Universidad Nacional Autónoma de México"
+  },
+  {
+    "domain": "emory.edu",
+    "name": "Emory University"
+  },
+  {
+    "domain": "ucdavis.edu",
+    "name": "University of California, Davis"
+  },
+  {
+    "domain": "online.yale.edu",
+    "name": "Yale University"
+  },
+  {
+    "domain": "certnexus.com",
+    "name": "CertNexus"
+  },
+  {
+    "domain": "itesm.edu",
+    "name": "Tecnológico de Monterrey"
+  },
+  {
+    "domain": "insper.edu.br",
+    "name": "Insper"
+  },
+  {
+    "domain": "palermo.edu",
+    "name": "Universidad de Palermo"
+  },
+  {
+    "domain": "unm.edu",
+    "name": "University of New Mexico"
+  },
+  {
+    "domain": "adobe.com",
+    "name": "Adobe"
+  },
+  {
+    "domain": "adp.com",
+    "name": "Automatic Data Processing, Inc. (ADP)"
+  },
+  {
+    "domain": "microsoft.com",
+    "name": "Microsoft"
+  },
+  {
+    "domain": "ucsd.edu",
+    "name": "University of California San Diego"
+  },
+  {
+    "domain": "redhat.com",
+    "name": "Red Hat"
+  },
+  {
+    "domain": "edureka.co",
+    "name": "Edureka"
+  },
+  {
+    "domain": "arm.com",
+    "name": "Arm"
+  },
+  {
+    "domain": "go.starweaver.com",
+    "name": "Starweaver"
+  },
+  {
+    "domain": "en.lmu.de",
+    "name": "Ludwig-Maximilians-Universität München (LMU)"
+  },
+  {
+    "domain": "deeplearning.ai",
+    "name": "DeepLearning.AI"
+  },
+  {
+    "domain": "facebook.com",
+    "name": "Meta"
+  },
+  {
+    "domain": "snowflake.com",
+    "name": "Snowflake"
+  },
+  {
+    "domain": "ibm.com",
+    "name": "IBM "
+  },
+  {
+    "domain": "mathworks.com",
+    "name": "MathWorks"
+  },
+  {
+    "domain": "sw.siemens.com",
+    "name": "Siemens"
+  },
+  {
+    "domain": "pwc.com",
+    "name": "PwC"
+  },
+  {
+    "domain": "learnkarts.com",
+    "name": "LearnKartS"
+  },
+  {
+    "domain": "yonsei.ac.kr",
+    "name": "Yonsei University"
+  },
+  {
+    "domain": "scrimba.com",
+    "name": "Scrimba"
+  },
+  {
+    "domain": "fractalanalyticsacademy.fractal.ai",
+    "name": "Fractal Analytics"
+  },
+  {
+    "domain": "cuhk.edu.hk",
+    "name": "The Chinese University of Hong Kong"
+  },
+  {
+    "domain": "edhec.edu",
+    "name": "EDHEC Business School"
+  },
+  {
+    "domain": "sas.com",
+    "name": "SAS"
+  },
+  {
+    "domain": "28digital.eu",
+    "name": "28DIGITAL"
+  },
+  {
+    "domain": "skillup.online",
+    "name": "SkillUp"
+  },
+  {
+    "domain": "lntedutech.com",
+    "name": "L&T EduTech"
+  },
+  {
+    "domain": "corporatefinanceinstitute.com",
+    "name": "Corporate Finance Institute"
+  },
+  {
+    "domain": "isb.edu",
+    "name": "Indian School of Business"
+  },
+  {
+    "domain": "darden.virginia.edu",
+    "name": "University of Virginia Darden School Foundation"
+  },
+  {
+    "domain": "aptly.co",
+    "name": "Aptly"
+  },
+  {
+    "domain": "tum.de",
+    "name": "Technical University of Munich (TUM)"
+  },
+  {
+    "domain": "simplilearn.com",
+    "name": "Simplilearn"
+  },
+  {
+    "domain": "lunduniversity.lu.se",
+    "name": "Lund University"
+  },
+  {
+    "domain": "epfl.ch",
+    "name": "École Polytechnique Fédérale de Lausanne"
+  },
+  {
+    "domain": "sciencespo.fr",
+    "name": "Sciences Po"
+  },
+  {
+    "domain": "virginia.edu",
+    "name": "University of Virginia"
+  },
+  {
+    "domain": "university.atlassian.com",
+    "name": "Atlassian"
+  },
+  {
+    "domain": "northeastern.edu",
+    "name": "Northeastern University "
+  },
+  {
+    "domain": "uwa.edu.au",
+    "name": "University of Western Australia"
+  },
+  {
+    "domain": "ufl.edu",
+    "name": "University of Florida"
+  },
+  {
+    "domain": "unibocconi.eu",
+    "name": "Università Bocconi"
+  },
+  {
+    "domain": "skillsbooster.net",
+    "name": "SkillsBooster Academy"
+  },
+  {
+    "domain": "whizlabs.com",
+    "name": "Whizlabs"
+  },
+  {
+    "domain": "aibusinessschool.com",
+    "name": "AI Business School"
+  },
+  {
+    "domain": "cbs.dk",
+    "name": "Copenhagen Business School"
+  },
+  {
+    "domain": "online.stanford.edu",
+    "name": "Stanford University"
+  },
+  {
+    "domain": "ucsc.edu",
+    "name": "University of California, Santa Cruz"
+  },
+  {
+    "domain": "rutgers.edu",
+    "name": "Rutgers the State University of New Jersey"
+  },
+  {
+    "domain": "sbs.ox.ac.uk",
+    "name": "Saïd Business School, University of Oxford"
+  },
+  {
+    "domain": "fredhutch.org",
+    "name": "Fred Hutchinson Cancer Center"
+  },
+  {
+    "domain": "aicerts.ai",
+    "name": "AI CERTs"
+  },
+  {
+    "domain": "aws.amazon.com",
+    "name": "Amazon Web Services"
+  },
+  {
+    "domain": "cloud.google.com",
+    "name": "Google Cloud"
+  },
+  {
+    "domain": "nvidia.com",
+    "name": "NVIDIA"
+  },
+  {
+    "domain": "kaist.ac.kr",
+    "name": "Korea Advanced Institute of Science and Technology(KAIST)"
+  },
+  {
+    "domain": "anahuac.mx",
+    "name": "Universidades Anáhuac"
+  },
+  {
+    "domain": "beyond.airbus.com",
+    "name": "Airbus Beyond"
+  },
+  {
+    "domain": "akamai.com",
+    "name": "Akamai Technologies, Inc."
+  },
+  {
+    "domain": "austral.edu.ar",
+    "name": "Universidad Austral"
+  },
+  {
+    "domain": "unicamp.br",
+    "name": "Universidade Estadual de Campinas"
+  },
+  {
+    "domain": "princeton.edu",
+    "name": "Princeton University"
+  },
+  {
+    "domain": "edu.alibabacloud.com",
+    "name": "Alibaba Cloud Academy"
+  },
+  {
+    "domain": "uniandes.edu.co",
+    "name": "Universidad de los Andes"
+  },
+  {
+    "domain": "nasm.org",
+    "name": "National Academy of Sports Medicine"
+  },
+  {
+    "domain": "iese.edu",
+    "name": "IESE Business School"
+  },
+  {
+    "domain": "uva.nl",
+    "name": "University of Amsterdam"
+  },
+  {
+    "domain": "leeds.ac.uk",
+    "name": "University of Leeds"
+  }
+]
