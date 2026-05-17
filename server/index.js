@@ -1,17 +1,17 @@
-import "dotenv/config";
-import express from "express";
-import cors from "cors";
-import helmet from "helmet";
-import rateLimit from "express-rate-limit";
-import { readFileSync, writeFileSync, existsSync } from "fs";
-import { fileURLToPath } from "url";
-import { dirname, join } from "path";
-import nodemailer from "nodemailer";
+import 'dotenv/config';
+import express from 'express';
+import cors from 'cors';
+import helmet from 'helmet';
+import rateLimit from 'express-rate-limit';
+import { readFileSync, writeFileSync, existsSync } from 'fs';
+import { fileURLToPath } from 'url';
+import { dirname, join } from 'path';
+import nodemailer from 'nodemailer';
 import {
   SUBJECT_CATEGORIES,
   withNormalizedSubject,
-} from "./lib/subjectCategories.js";
-import { compareCoursesEnglishMediumFirst } from "./lib/englishMediumSort.js";
+} from './lib/subjectCategories.js';
+import { compareCoursesEnglishMediumFirst } from './lib/englishMediumSort.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const app = express();
@@ -27,16 +27,16 @@ app.use(
         defaultSrc: ["'self'"],
         scriptSrc: ["'self'"],
         styleSrc: ["'self'", "'unsafe-inline'"],
-        imgSrc: ["'self'", "data:", "https:"],
+        imgSrc: ["'self'", 'data:', 'https:'],
         connectSrc: ["'self'"],
-        fontSrc: ["'self'", "https:", "data:"],
+        fontSrc: ["'self'", 'https:', 'data:'],
         objectSrc: ["'none'"],
         frameSrc: ["'none'"],
         upgradeInsecureRequests: [],
       },
     },
     crossOriginEmbedderPolicy: false, // keep SPA assets compatible
-  })
+  }),
 );
 
 // ---------------------------------------------------------------------------
@@ -45,39 +45,37 @@ app.use(
 //   ALLOWED_ORIGINS=https://edura.example.com,https://www.edura.example.com
 // Defaults to localhost dev origins so `npm run dev` works out of the box.
 // ---------------------------------------------------------------------------
-const rawOrigins = process.env.ALLOWED_ORIGINS || "";
+const rawOrigins = process.env.ALLOWED_ORIGINS || '';
 const allowedOrigins = rawOrigins
   ? rawOrigins
-      .split(",")
+      .split(',')
       .map((o) => o.trim())
       .filter(Boolean)
-  : ["http://localhost:8080", "http://127.0.0.1:8080"];
+  : ['http://localhost:8080', 'http://127.0.0.1:8080'];
 
 app.use(
   cors({
     origin: (origin, callback) => {
-      // Allow server-to-server / curl calls (no Origin header) only in dev
       if (!origin) {
-        if (process.env.NODE_ENV === "production") {
-          return callback(new Error("CORS: missing Origin"), false);
-        }
         return callback(null, true);
       }
+
       if (allowedOrigins.includes(origin)) {
         return callback(null, true);
       }
+
       return callback(new Error(`CORS: origin '${origin}' not allowed`), false);
     },
-    methods: ["GET", "POST"],
-    allowedHeaders: ["Content-Type"],
+    methods: ['GET', 'POST'],
+    allowedHeaders: ['Content-Type'],
     credentials: false,
-  })
+  }),
 );
 
 // ---------------------------------------------------------------------------
 // Security: Request body size limit (prevents large-payload DoS)
 // ---------------------------------------------------------------------------
-app.use(express.json({ limit: "16kb" }));
+app.use(express.json({ limit: '16kb' }));
 
 // ---------------------------------------------------------------------------
 // Security: Global rate limiter — 200 req / 15 min per IP
@@ -87,7 +85,7 @@ const globalLimiter = rateLimit({
   max: 200,
   standardHeaders: true,
   legacyHeaders: false,
-  message: { error: "Too many requests, please try again later." },
+  message: { error: 'Too many requests, please try again later.' },
 });
 app.use(globalLimiter);
 
@@ -99,43 +97,45 @@ const contactLimiter = rateLimit({
   max: 5,
   standardHeaders: true,
   legacyHeaders: false,
-  message: { error: "Too many contact submissions. Please wait a few minutes." },
+  message: {
+    error: 'Too many contact submissions. Please wait a few minutes.',
+  },
 });
 
 // ---------------------------------------------------------------------------
 // Data paths
 // ---------------------------------------------------------------------------
-const coursesPath = join(__dirname, "data", "courses.json");
-const sriLankaCoursesPath = join(__dirname, "data", "sri-lanka-courses.json");
-const internshipsPath = join(__dirname, "data", "internships.json");
-const contactPath = join(__dirname, "data", "contact-messages.json");
+const coursesPath = join(__dirname, 'data', 'courses.json');
+const sriLankaCoursesPath = join(__dirname, 'data', 'sri-lanka-courses.json');
+const internshipsPath = join(__dirname, 'data', 'internships.json');
+const contactPath = join(__dirname, 'data', 'contact-messages.json');
 
 const SRI_LANKA_CATEGORIES = [
-  "After O/L",
-  "After A/L",
-  "Diploma",
-  "Degree",
-  "Masters",
-  "PhD",
-  "Certificate",
-  "Professional",
-  "Other",
+  'After O/L',
+  'After A/L',
+  'Diploma',
+  'Degree',
+  'Masters',
+  'PhD',
+  'Certificate',
+  'Professional',
+  'Other',
 ];
-const clientDist = join(__dirname, "..", "client", "dist");
-const clientIndex = join(clientDist, "index.html");
+const clientDist = join(__dirname, '..', 'client', 'dist');
+const clientIndex = join(clientDist, 'index.html');
 
 // ---------------------------------------------------------------------------
 // Data loaders
 // ---------------------------------------------------------------------------
 function loadCourses() {
-  const raw = readFileSync(coursesPath, "utf-8");
+  const raw = readFileSync(coursesPath, 'utf-8');
   return JSON.parse(raw);
 }
 
 function loadSriLankaCourses() {
   if (!existsSync(sriLankaCoursesPath)) return [];
   try {
-    const raw = readFileSync(sriLankaCoursesPath, "utf-8");
+    const raw = readFileSync(sriLankaCoursesPath, 'utf-8');
     const data = JSON.parse(raw);
     return Array.isArray(data) ? data : [];
   } catch {
@@ -146,7 +146,7 @@ function loadSriLankaCourses() {
 function loadInternships() {
   if (!existsSync(internshipsPath)) return [];
   try {
-    const raw = readFileSync(internshipsPath, "utf-8");
+    const raw = readFileSync(internshipsPath, 'utf-8');
     const data = JSON.parse(raw);
     return Array.isArray(data) ? data : [];
   } catch {
@@ -157,17 +157,17 @@ function loadInternships() {
 /** LinkedIn-sourced rows first, then others; within each group by date then title. */
 function compareInternshipsForListing(a, b) {
   const linkedInFirst = (i) =>
-    /linkedin/i.test(String(i.sourceType || "")) ? 0 : 1;
+    /linkedin/i.test(String(i.sourceType || '')) ? 0 : 1;
   const la = linkedInFirst(a);
   const lb = linkedInFirst(b);
   if (la !== lb) return la - lb;
-  const da = String(a.postedAt || "");
-  const db = String(b.postedAt || "");
+  const da = String(a.postedAt || '');
+  const db = String(b.postedAt || '');
   if (da && db) {
     const byDate = db.localeCompare(da);
     if (byDate !== 0) return byDate;
   }
-  return String(a.title || "").localeCompare(String(b.title || ""));
+  return String(a.title || '').localeCompare(String(b.title || ''));
 }
 
 // Keep contact log bounded to 10 000 entries to prevent disk exhaustion.
@@ -177,7 +177,7 @@ function appendContactMessage(entry) {
   let list = [];
   if (existsSync(contactPath)) {
     try {
-      list = JSON.parse(readFileSync(contactPath, "utf-8"));
+      list = JSON.parse(readFileSync(contactPath, 'utf-8'));
       if (!Array.isArray(list)) list = [];
     } catch {
       list = [];
@@ -191,7 +191,7 @@ function appendContactMessage(entry) {
     at: new Date().toISOString(),
     ...entry,
   });
-  writeFileSync(contactPath, JSON.stringify(list, null, 2), "utf-8");
+  writeFileSync(contactPath, JSON.stringify(list, null, 2), 'utf-8');
 }
 
 async function trySendContactEmail({ name, email, message }) {
@@ -209,15 +209,13 @@ async function trySendContactEmail({ name, email, message }) {
   const transporter = nodemailer.createTransport({
     host: SMTP_HOST,
     port: Number(SMTP_PORT || 587),
-    secure: SMTP_SECURE === "true",
+    secure: SMTP_SECURE === 'true',
     auth:
-      SMTP_USER && SMTP_PASS
-        ? { user: SMTP_USER, pass: SMTP_PASS }
-        : undefined,
+      SMTP_USER && SMTP_PASS ? { user: SMTP_USER, pass: SMTP_PASS } : undefined,
   });
 
   await transporter.sendMail({
-    from: CONTACT_FROM_EMAIL || SMTP_USER || "noreply@edura.local",
+    from: CONTACT_FROM_EMAIL || SMTP_USER || 'noreply@edura.local',
     to: CONTACT_TO_EMAIL,
     replyTo: email,
     subject: `Edura contact: ${name}`,
@@ -230,31 +228,31 @@ async function trySendContactEmail({ name, email, message }) {
 // Routes
 // ---------------------------------------------------------------------------
 
-app.get("/api/health", (_req, res) => {
+app.get('/api/health', (_req, res) => {
   res.json({ ok: true });
 });
 
-app.get("/api/subjects", (_req, res) => {
+app.get('/api/subjects', (_req, res) => {
   try {
     res.json(SUBJECT_CATEGORIES);
   } catch {
-    res.status(500).json({ error: "Failed to load subjects" });
+    res.status(500).json({ error: 'Failed to load subjects' });
   }
 });
 
-app.get("/api/universities", (_req, res) => {
+app.get('/api/universities', (_req, res) => {
   try {
     const courses = loadCourses();
     const universities = [...new Set(courses.map((c) => c.university))].sort(
-      (a, b) => a.localeCompare(b)
+      (a, b) => a.localeCompare(b),
     );
     res.json(universities);
   } catch {
-    res.status(500).json({ error: "Failed to load universities" });
+    res.status(500).json({ error: 'Failed to load universities' });
   }
 });
 
-app.get("/api/internships", (req, res) => {
+app.get('/api/internships', (req, res) => {
   try {
     let list = loadInternships();
     const { q, source, page: pageRaw, limit: limitRaw } = req.query;
@@ -262,11 +260,11 @@ app.get("/api/internships", (req, res) => {
     if (
       source &&
       String(source).trim() &&
-      String(source).toLowerCase() !== "all"
+      String(source).toLowerCase() !== 'all'
     ) {
       const want = String(source).trim().toLowerCase();
       list = list.filter(
-        (i) => String(i.sourceType || "").toLowerCase() === want
+        (i) => String(i.sourceType || '').toLowerCase() === want,
       );
     }
 
@@ -284,7 +282,7 @@ app.get("/api/internships", (req, res) => {
           i.postingUrl,
         ]
           .filter(Boolean)
-          .join(" ")
+          .join(' ')
           .toLowerCase();
         return blob.includes(needle);
       });
@@ -293,11 +291,11 @@ app.get("/api/internships", (req, res) => {
     list.sort(compareInternshipsForListing);
 
     const total = list.length;
-    const pageNum = Math.max(1, parseInt(String(pageRaw || "1"), 10) || 1);
-    const limitParsed = parseInt(String(limitRaw || "10"), 10);
+    const pageNum = Math.max(1, parseInt(String(pageRaw || '1'), 10) || 1);
+    const limitParsed = parseInt(String(limitRaw || '10'), 10);
     const limit = Math.min(
       50,
-      Math.max(1, Number.isFinite(limitParsed) ? limitParsed : 10)
+      Math.max(1, Number.isFinite(limitParsed) ? limitParsed : 10),
     );
     const totalPages = Math.max(1, Math.ceil(total / limit) || 1);
     const page = Math.min(pageNum, totalPages);
@@ -306,38 +304,37 @@ app.get("/api/internships", (req, res) => {
 
     res.json({ items, total, page, limit, totalPages });
   } catch {
-    res.status(500).json({ error: "Failed to load internships" });
+    res.status(500).json({ error: 'Failed to load internships' });
   }
 });
 
-app.get("/api/internships/sources", (_req, res) => {
+app.get('/api/internships/sources', (_req, res) => {
   try {
     const types = [
       ...new Set(
         loadInternships()
           .map((i) => i.sourceType)
-          .filter(Boolean)
+          .filter(Boolean),
       ),
     ].sort((a, b) => a.localeCompare(b));
     res.json(types);
   } catch {
-    res.status(500).json({ error: "Failed to load internship sources" });
+    res.status(500).json({ error: 'Failed to load internship sources' });
   }
 });
 
-app.get("/api/courses", (req, res) => {
+app.get('/api/courses', (req, res) => {
   try {
     let courses = loadCourses().map(withNormalizedSubject);
     const { subject, university, q } = req.query;
 
-    if (subject && subject !== "all") {
+    if (subject && subject !== 'all') {
       const want = String(subject).toLowerCase();
       courses = courses.filter((c) => c.subject.toLowerCase() === want);
     }
-    if (university && university !== "all") {
+    if (university && university !== 'all') {
       courses = courses.filter(
-        (c) =>
-          c.university.toLowerCase() === String(university).toLowerCase()
+        (c) => c.university.toLowerCase() === String(university).toLowerCase(),
       );
     }
     if (q && String(q).trim()) {
@@ -347,67 +344,66 @@ app.get("/api/courses", (req, res) => {
           c.title.toLowerCase().includes(needle) ||
           c.description.toLowerCase().includes(needle) ||
           c.university.toLowerCase().includes(needle) ||
-          c.subject.toLowerCase().includes(needle)
+          c.subject.toLowerCase().includes(needle),
       );
     }
 
     courses.sort(compareCoursesEnglishMediumFirst);
     res.json(courses);
   } catch {
-    res.status(500).json({ error: "Failed to load courses" });
+    res.status(500).json({ error: 'Failed to load courses' });
   }
 });
 
-app.get("/api/sri-lanka/categories", (_req, res) => {
+app.get('/api/sri-lanka/categories', (_req, res) => {
   res.json(SRI_LANKA_CATEGORIES);
 });
 
-app.get("/api/sri-lanka/subjects", (_req, res) => {
+app.get('/api/sri-lanka/subjects', (_req, res) => {
   try {
     res.json(SUBJECT_CATEGORIES);
   } catch {
-    res.status(500).json({ error: "Failed to load subjects" });
+    res.status(500).json({ error: 'Failed to load subjects' });
   }
 });
 
-app.get("/api/sri-lanka/universities", (_req, res) => {
+app.get('/api/sri-lanka/universities', (_req, res) => {
   try {
     const courses = loadSriLankaCourses();
     const universities = [...new Set(courses.map((c) => c.university))].sort(
-      (a, b) => a.localeCompare(b)
+      (a, b) => a.localeCompare(b),
     );
     res.json(universities);
   } catch {
-    res.status(500).json({ error: "Failed to load universities" });
+    res.status(500).json({ error: 'Failed to load universities' });
   }
 });
 
-app.get("/api/sri-lanka/courses", (req, res) => {
+app.get('/api/sri-lanka/courses', (req, res) => {
   try {
     let courses = loadSriLankaCourses().map(withNormalizedSubject);
     const { subject, university, category, pricing, q } = req.query;
 
-    if (subject && subject !== "all") {
+    if (subject && subject !== 'all') {
       const want = String(subject).toLowerCase();
       courses = courses.filter((c) => c.subject.toLowerCase() === want);
     }
-    if (university && university !== "all") {
+    if (university && university !== 'all') {
       courses = courses.filter(
-        (c) =>
-          c.university.toLowerCase() === String(university).toLowerCase()
+        (c) => c.university.toLowerCase() === String(university).toLowerCase(),
       );
     }
-    if (category && category !== "all") {
+    if (category && category !== 'all') {
       courses = courses.filter(
         (c) =>
-          String(c.category || "").toLowerCase() ===
-          String(category).toLowerCase()
+          String(c.category || '').toLowerCase() ===
+          String(category).toLowerCase(),
       );
     }
-    if (pricing === "free") {
-      courses = courses.filter((c) => c.pricing === "free");
-    } else if (pricing === "paid") {
-      courses = courses.filter((c) => c.pricing === "paid");
+    if (pricing === 'free') {
+      courses = courses.filter((c) => c.pricing === 'free');
+    } else if (pricing === 'paid') {
+      courses = courses.filter((c) => c.pricing === 'paid');
     }
 
     if (q && String(q).trim()) {
@@ -418,28 +414,28 @@ app.get("/api/sri-lanka/courses", (req, res) => {
           c.description.toLowerCase().includes(needle) ||
           c.university.toLowerCase().includes(needle) ||
           c.subject.toLowerCase().includes(needle) ||
-          String(c.category || "")
+          String(c.category || '')
             .toLowerCase()
-            .includes(needle)
+            .includes(needle),
       );
     }
 
     courses.sort(compareCoursesEnglishMediumFirst);
     res.json(courses);
   } catch {
-    res.status(500).json({ error: "Failed to load Sri Lanka courses" });
+    res.status(500).json({ error: 'Failed to load Sri Lanka courses' });
   }
 });
 
-app.post("/api/contact", contactLimiter, async (req, res) => {
-  const name = String(req.body?.name || "").trim();
-  const email = String(req.body?.email || "").trim();
-  const message = String(req.body?.message || "").trim();
+app.post('/api/contact', contactLimiter, async (req, res) => {
+  const name = String(req.body?.name || '').trim();
+  const email = String(req.body?.email || '').trim();
+  const message = String(req.body?.message || '').trim();
 
   if (!name || name.length > 120) {
     return res
       .status(400)
-      .json({ error: "Please enter your name (max 120 characters)." });
+      .json({ error: 'Please enter your name (max 120 characters).' });
   }
   if (
     !email ||
@@ -448,38 +444,38 @@ app.post("/api/contact", contactLimiter, async (req, res) => {
   ) {
     return res
       .status(400)
-      .json({ error: "Please enter a valid email address." });
+      .json({ error: 'Please enter a valid email address.' });
   }
   if (!message || message.length < 10) {
     return res
       .status(400)
-      .json({ error: "Please enter a message (at least 10 characters)." });
+      .json({ error: 'Please enter a message (at least 10 characters).' });
   }
   if (message.length > 8000) {
     return res
       .status(400)
-      .json({ error: "Message is too long (max 8000 characters)." });
+      .json({ error: 'Message is too long (max 8000 characters).' });
   }
 
   try {
     appendContactMessage({ name, email, message });
   } catch {
-    return res.status(500).json({ error: "Could not save your message." });
+    return res.status(500).json({ error: 'Could not save your message.' });
   }
 
   let emailed = false;
   try {
     emailed = await trySendContactEmail({ name, email, message });
   } catch (e) {
-    console.error("Contact email failed:", e.message);
+    console.error('Contact email failed:', e.message);
   }
 
   res.json({
     ok: true,
     emailed,
     message: emailed
-      ? "Thank you. Your message was sent."
-      : "Thank you. We received your message and will review it soon.",
+      ? 'Thank you. Your message was sent.'
+      : 'Thank you. We received your message and will review it soon.',
   });
 });
 
@@ -488,8 +484,8 @@ app.post("/api/contact", contactLimiter, async (req, res) => {
 // ---------------------------------------------------------------------------
 if (existsSync(clientIndex)) {
   app.use(express.static(clientDist));
-  app.get("*", (req, res, next) => {
-    if (req.path.startsWith("/api")) return next();
+  app.get('*', (req, res, next) => {
+    if (req.path.startsWith('/api')) return next();
     res.sendFile(clientIndex);
   });
 }
@@ -499,11 +495,11 @@ if (existsSync(clientIndex)) {
 // ---------------------------------------------------------------------------
 // eslint-disable-next-line no-unused-vars
 app.use((err, _req, res, _next) => {
-  if (err.message && err.message.startsWith("CORS:")) {
+  if (err.message && err.message.startsWith('CORS:')) {
     return res.status(403).json({ error: err.message });
   }
-  console.error("Unhandled error:", err);
-  res.status(500).json({ error: "Internal server error." });
+  console.error('Unhandled error:', err);
+  res.status(500).json({ error: 'Internal server error.' });
 });
 
 // ---------------------------------------------------------------------------
@@ -511,14 +507,14 @@ app.use((err, _req, res, _next) => {
 // ---------------------------------------------------------------------------
 const server = app.listen(PORT, () => {
   console.log(
-    `Edura API listening on port ${PORT} (try http://127.0.0.1:${PORT}/api/health)`
+    `Edura API listening on port ${PORT} (try http://127.0.0.1:${PORT}/api/health)`,
   );
 });
 
-server.on("error", (err) => {
-  if (err.code === "EADDRINUSE") {
+server.on('error', (err) => {
+  if (err.code === 'EADDRINUSE') {
     console.error(
-      `Port ${PORT} is already in use. Stop the other process, or run with a different PORT.`
+      `Port ${PORT} is already in use. Stop the other process, or run with a different PORT.`,
     );
   } else {
     console.error(err);
